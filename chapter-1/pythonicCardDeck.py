@@ -1,7 +1,16 @@
 import collections
+from random import choice
 
 Card = collections.namedtuple("Card", ['rank', 'suit'])
 
+
+'''
+You want to use the same names for the special methods in your class as those used in the standard library
+because it allows the user to use your code without needing a special understanding of how it was written
+but also allows you to use standard functions as they'll call standard library special functions on your 
+class
+
+'''
 class FrenchDeck:
     ranks = [str(n) for n in range(2,11)] + list("JQKA")
     suits = 'spades diamonds clubs hearts'.split()
@@ -23,5 +32,6 @@ def main():
     deck = FrenchDeck()
     print(len(deck))
     print(deck[0])
+    print(choice(deck))
 
 main()
