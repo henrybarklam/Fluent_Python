@@ -16,7 +16,7 @@ class FrenchDeck:
     suits = 'spades diamonds clubs hearts'.split()
 
     def __init__(self):
-        self._cards = [Card(rank, suit) for rank in self.ranks for suit in self.suits]
+        self._cards = [Card(rank, suit) for suit in self.suits for rank in self.ranks ]
 
     def __len__(self):
         print("Using this one")
@@ -33,5 +33,7 @@ def main():
     print(len(deck))
     print(deck[0])
     print(choice(deck))
+    print("Automatically supports splicing:")
+    print(deck[12::13])
 
 main()
