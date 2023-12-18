@@ -10,10 +10,14 @@ because it allows the user to use your code without needing a special understand
 but also allows you to use standard functions as they'll call standard library special functions on your 
 class
 
+Notes:
+dict(parameter:value, parameter:value...) will return a dictionary with parameters as strings and values as whatever is given
+
 '''
 class FrenchDeck:
     ranks = [str(n) for n in range(2,11)] + list("JQKA")
     suits = 'spades diamonds clubs hearts'.split()
+    suit_values = dict(spades="3", hearts=2, diamonds=1, clubs=0)
 
     def __init__(self):
         self._cards = [Card(rank, suit) for suit in self.suits for rank in self.ranks ]
@@ -22,6 +26,7 @@ class FrenchDeck:
         print("Using this one")
         return len(self._cards)
     
+    #This function alone makes our class iterable
     def __getitem__(self, position):
         return self._cards[position]
     
@@ -35,5 +40,6 @@ def main():
     print(choice(deck))
     print("Automatically supports splicing:")
     print(deck[12::13])
+    print(FrenchDeck().suit_values)
 
 main()
