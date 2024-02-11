@@ -22,3 +22,14 @@ f(*(1,2,3))
 # Python Decorators
 The only constrain upon the object returned by thedecorator is that it can be used as a function - which basically means it must be callable. Any classes we use as decorators must implement __call__.
 
+The act of decoration replaces the object its being called on
+
+You used to have to do something like the following: 
+    def foo(): pass
+    foo: staticmethod(foo)
+
+With the addition of the @ decoration operator you now get the same result by saying:
+@staticmethod
+def foo(): pass
+
+The @ decoration operator is just a little syntax sugar meaning "pass a function object through another function and assign the result to the original function"
