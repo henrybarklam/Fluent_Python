@@ -20,7 +20,9 @@ f(*x)
 f(*(1,2,3))
 
 # Python Decorators
-The only constrain upon the object returned by thedecorator is that it can be used as a function - which basically means it must be callable. Any classes we use as decorators must implement __call__.
+Everything in Python is an object, including functions.
+
+The only constrain upon the object returned by the decorator is that it can be used as a function - which basically means it must be callable. Any classes we use as decorators must implement __call__.
 
 The act of decoration replaces the object its being called on
 
@@ -33,3 +35,6 @@ With the addition of the @ decoration operator you now get the same result by sa
 def foo(): pass
 
 The @ decoration operator is just a little syntax sugar meaning "pass a function object through another function and assign the result to the original function"
+
+The only restriction to the result of a decorator is that it must be callable, so that it can properly replace the decorated function. In decorator_function and another_decorator_function, we've replaced the original function with an object of a class that has a __call__() method (thus callable, but really its the new object thats being called)
+
