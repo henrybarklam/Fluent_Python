@@ -1,5 +1,6 @@
 '''
-The constructor for my_decorator is executed at the point of decoration of the function
+The constructor for my_decorator is executed at the point of decoration of the function.
+Since we can call f() inside __init__, it shows that the creation
 
 '''
 
