@@ -17,7 +17,8 @@ def func1():
 def func2():
     print("inside func2")
 
-func1()
-func2()
+# Interestingly func1 name is now new_f
+print(func1.__name__)
 
+func1()
 
