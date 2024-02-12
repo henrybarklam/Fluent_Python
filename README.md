@@ -79,5 +79,11 @@ The primary difference is that when overriding __new__() you can change things l
 A metamethod can be called from either the metaclass or from the class, but *not* from an instance
 A classmethod can be called from either a class or its instances, but is not part of the metaclass
 
+# Static Methods and Class Methods
+Static methods: Methods within a class that have no access to anything else int the class (no self keyword or cls keyword). They cannot change or look at any object attributes or call other methods within the class. Use decorator @staticmethod to produce.
+
+Class methods: Methods within a class that only have access to class variables and other class methods. They can access anything within the class, but cannot access instance attributes. TODO: Double check what is meant by this.
+
 # Comprehensions
 A list comprehension could be broken down into two component parts - a filter and a map (and a couple of lambda functions)
+
