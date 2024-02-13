@@ -70,6 +70,14 @@ is
 
 Classes are often referred to as types - you're calling a function that creates a new type based on its arguments
 
+# Class initialization
+
+Remember you don't include params in the class parentheses, rather in the __init__ function
+
+class Pizza(object):
+    def __init__(self, toppings):
+        self.toppings = toppings
+
 # Using __init__ vs __new__ in Metaclasses:
 __new__ is called for the creation of a new class, while __init__ is called after the class is created, to perform additional initialization before the class is handed to the caller.
 
